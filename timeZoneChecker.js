@@ -1,18 +1,6 @@
-const timeChecker = ({
-  year,
-  month,
-  day,
-  hr,
-  minute,
-}: {
-  year?: any;
-  month?: any;
-  day?: any;
-  hr?: any;
-  minute?: any;
-}) => {
-  const now = new Date() as any;
-  const expectedDate = new Date(year, month, day, hr, minute, 0, 0) as any;
+const timeChecker = ({ year, month, day, hr, minute }) => {
+  const now = new Date();
+  const expectedDate = new Date(year, month, day, hr, minute, 0, 0);
   const milisecondsToTime = expectedDate - now;
   return {
     time: milisecondsToTime,
@@ -32,3 +20,4 @@ const { time, isTime, isTimeExceeded } = timeChecker({
   hr: 11,
   minute: 0,
 });
+console.log({ time, isTime, isTimeExceeded });
